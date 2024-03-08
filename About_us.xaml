@@ -1,0 +1,480 @@
+﻿<Window x:Class="Newsify.About_us"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Newsify"
+        mc:Ignorable="d"
+       Title="About_us" Height="650" Width="1200" WindowStartupLocation="CenterScreen">
+    
+    <Window.Background>
+        <ImageBrush ImageSource="Resources\background3.jpg"/>
+    </Window.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Name="logo_nav_pl" Grid.Row="0" Grid.Column="0"  >
+
+                    <Label Name="newsify_about_lb" Content="Newsify"
+                   FontFamily="Garamond"
+                   FontSize="35"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                        
+                       Margin="-350,10,0,10" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                   FontWeight="Bold">
+                        <Label.Effect>
+                            <DropShadowEffect Opacity="0.2"/>
+                        </Label.Effect>
+                    </Label>
+                    <Label Name="stay_informed_about_lb" Content="Stay Informed, Stay Ahead"
+                   FontFamily="Garamond"
+                   FontSize="12"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                        
+                       Margin="-350,-15,0,0" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                   FontWeight="Bold">
+                        <Label.Effect>
+                            <DropShadowEffect Opacity="0.1"/>
+                        </Label.Effect>
+                    </Label>
+                    <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="50" Margin="-180,-60,0,0" Opacity="0.5"/>
+                    <Border BorderBrush="Black" BorderThickness="1" Width="150" Height="0.5" Margin="-350,-42,0,0" Opacity="0.8"/>
+
+                </StackPanel>
+                <StackPanel   Grid.Row="1"  Grid.ColumnSpan="2" Name="about_us_pl" Margin="10,0,-10,0">
+                    <Border BorderBrush="Black" BorderThickness="20" Width="400" Height="0.5" Margin="-750,30,0,0" Opacity="1"/>
+                    <Label Name="about_us_lp" Content="ABOUT US"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="50"
+                    Height="auto"
+                       Width="435"
+                   HorizontalContentAlignment="Center"
+                       Margin="0,-40,0,0" 
+                   FontWeight="Bold">
+                        <Label.Effect>
+                            <DropShadowEffect Opacity="0.4"/>
+                        </Label.Effect>
+                    </Label>
+                    <Border BorderBrush="Black" BorderThickness="20" Width="400" Height="0.5" Margin="780,-55,30,0" Opacity="1"/>
+                </StackPanel>
+                <Border
+            Grid.Row="2"
+            Width="570"
+            
+            >
+                    <StackPanel
+                x:Name="about_s_z"
+                >
+                        <Image Source="Resources\samy.jpg"
+                       Width="200"
+                       Height="200"
+                       Margin="-400 0 0 0"
+                    
+                    />
+                        <Label
+                    Name="N_samy_lb"
+                    Content="Mohamed Samy"
+                    Width="150"
+                    Margin="-50 -360 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="0.4"/>
+                            </Label.Effect>
+                        </Label>
+                        <Label
+                    Name="P_samy_lb"
+                    Content="Team leader"
+                    Width="150"
+                    Margin="-50 -300 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect  Opacity="0.8" Color="#FFE6E110"/>
+                            </Label.Effect>
+                        </Label>
+
+                        <TextBlock
+                      Width="93"
+                    Margin="-95 -250 0 0"
+                    Height="25"
+                    Name="samy_linkedin_tb"
+                    >     
+                 <Hyperlink Foreground="#FF000200" NavigateUri="https://www.linkedin.com/in/mohamed-samy10/" RequestNavigate="Hyperlink_RequestNavigate_s">
+                  Linkedin profile
+                  </Hyperlink>
+
+                        </TextBlock>
+                        <Label
+                     Name="D_samy_lb"
+                    Content="Artificial Intelligence"
+                    Width="150"
+                    Margin="-50 -210 0 0" Height="35"
+                    FontSize="15"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    ></Label>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="100" Margin="130,-280,0,0" Opacity="0.5"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="160" Height="1" Margin="-40,-180,0,0" Opacity="0.5"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="90" Margin="-227,-90,0,0" Opacity="0.5"/>
+                <Image Source="Resources\zeiad.jpg"
+                       Margin="390 -200 0 0"
+                       Height="200"
+                       Width="200"
+                       />
+                        <Label
+                    Name="N_zeiad_lb"
+                    Content="Zeiad Mahmoud"
+                    Width="150"
+                    Margin="-50 -135 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="0.4"/>
+                            </Label.Effect>
+                        </Label>
+                        <TextBlock
+                      Width="93"
+                    Margin="-99 -80  0 0"
+                    Height="25"
+                    Name="zeiad_linkedin_tb"
+                    >     
+                 <Hyperlink Foreground="#FF000200" NavigateUri="https://www.linkedin.com/in/zeiad-mahmoud-2817b0239" RequestNavigate="Hyperlink_RequestNavigate_s">
+                  Linkedin profile
+                  </Hyperlink>
+
+                        </TextBlock>
+                        <Label
+                     Name="D_zeiad_lb"
+                    Content="Cyber Security"
+                    Width="150"
+                    Margin="-50 -30 0 0" Height="35"
+                    FontSize="15"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    ></Label>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="570" Height="1" Margin="0,0,0,0" Opacity="0.5"/>
+
+                    </StackPanel>
+                </Border>
+                <Border  Grid.Column="1"  Grid.Row="2" BorderBrush="Black" BorderThickness="1" Width="1" Height="190" Margin="-590,0,0,0" Opacity="0.5"/>
+                <Border
+            Grid.Column="1"
+            Grid.Row="2"
+            Width="570"
+            >
+                    <StackPanel
+                x:Name="about_mo2_k"
+                >
+                <Image Source="Resources\mo'.jpeg"
+                       Width="200" RenderTransformOrigin="0.5,0.5"
+                       Height="200"
+                       Margin="-380 0 0 0"
+                       
+                       >
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <Label
+                    Name="N_mo2_lb"
+                    Content="Moamen Mahmoud"
+                    Width="180"
+                    Margin="-50 -360 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="0.4"/>
+                            </Label.Effect>
+                        </Label>
+                        <TextBlock
+                      Width="93"
+                    Margin="-105 -300 0 0"
+                    Height="25"
+                    Name="mo2_linkedin_tb"
+                    >     
+                 <Hyperlink Foreground="#FF000200" NavigateUri="https://www.linkedin.com/in/moamen-mahmoud-555783224" RequestNavigate="Hyperlink_RequestNavigate_s">
+                  Linkedin profile
+                  </Hyperlink>
+
+                        </TextBlock>
+
+                        <Label
+                     Name="D_mo2_lb"
+                    Content="Cyber Security"
+                    Width="150"
+                    Margin="-60 -250 0 0" Height="35"
+                    FontSize="15"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    ></Label>
+
+
+                        <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="100" Margin="130,-280,0,0" Opacity="0.5"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="160" Height="1" Margin="-40,-180,0,0" Opacity="0.5"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="90" Margin="-217,-90,0,0" Opacity="0.5"/>
+                <Image Source="Resources\krkr.jpeg"
+                       Margin="390 -200 0 0"
+                       Height="200"
+                       Width="200"
+                       />
+
+                        <Label
+                    Name="N_krkr_lb"
+                    Content="Ahmed Khaled"
+                    Width="150"
+                    Margin="-50 -135 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="0.4"/>
+                            </Label.Effect>
+                        </Label>
+                        <TextBlock
+                      Width="93"
+                    Margin="-99 -80  0 0"
+                    Height="25"
+                    Name="krkr_linkedin_tb"
+                    >     
+                 <Hyperlink Foreground="#FF000200" NavigateUri="https://www.linkedin.com/in/krkr?trk=contact-info" RequestNavigate="Hyperlink_RequestNavigate_s">
+                  Linkedin profile
+                  </Hyperlink>
+
+                        </TextBlock>
+
+                        <Label
+                     Name="D_krkr_lb"
+                    Content="Artificial Intelligence"
+                    Width="150"
+                    Margin="-50 -30 0 0" Height="35"
+                    FontSize="15"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    ></Label>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="570" Height="1" Margin="0,0,0,0" Opacity="0.5"/>
+
+                    </StackPanel>
+                </Border>
+                <Border
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            
+            >
+                    <StackPanel>
+                <Image Source="Resources\abdo.jpg"
+                    Width="200"
+                       Height="200"
+                       Margin="-900 0 0 0"
+                       
+                    />
+                        <Label
+                    Name="N_abdo_lb"
+                    Content="Abdelrhman Khaled"
+                    Width="180"
+                    Margin="-470 -360 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="0.4"/>
+                            </Label.Effect>
+                        </Label>
+                        <TextBlock
+                      Width="93"
+                    Margin="-539 -290  0 0"
+                    Height="25"
+                    Name="abdo_linkedin_tb"
+                    >     
+                 <Hyperlink Foreground="#FF000200" NavigateUri="https://www.linkedin.com/in/abdelrhman-khaled-7ba929269" RequestNavigate="Hyperlink_RequestNavigate_s">
+                  Linkedin profile
+                  </Hyperlink>
+
+                        </TextBlock>
+                        <Label
+                     Name="D_abdo_lb"
+                    Content="Cyber Security"
+                    Width="150"
+                    Margin="-500 -230 0 0" Height="35"
+                    FontSize="15"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    ></Label>
+
+
+                        <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="100" Margin="-260,-280,0,0" Opacity="0.5"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="160" Height="1" Margin="-450,-180,0,0" Opacity="0.5"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="90" Margin="-630,-90,0,0" Opacity="0.5"/>
+                <Image Source="Resources\joe.jpeg"
+                       Width="200"
+                       Height="200"
+                       Margin="0 -200 0 0"
+                    
+                    />
+                        <Label
+                    Name="N_joe_lb"
+                    Content="Youssef Eldeeb"
+                    Width="180"
+                    Margin="-440 -140 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="0.4"/>
+                            </Label.Effect>
+                        </Label>
+                        <TextBlock
+                      Width="93"
+                    Margin="-506 -90  0 0"
+                    Height="25"
+                    Name="joe_linkedin_tb"
+                    >     
+                 <Hyperlink Foreground="#FF000200" NavigateUri="https://www.linkedin.com/in/youssef-eldeeb-1a4269253" RequestNavigate="Hyperlink_RequestNavigate_s">
+                  Linkedin profile
+                  </Hyperlink>
+
+                        </TextBlock>
+                        <Label
+                     Name="D_joe_lb"
+                    Content="Artificial Intelligence"
+                    Width="150"
+                    Margin="-470 -40 0 0" Height="35"
+                    FontSize="15"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    ></Label>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="100" Margin="200,-270,0,0" Opacity="0.5"/>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="160" Height="1" Margin="380,-165,0,0" Opacity="0.5"/>
+                        <Image
+                    Margin="800 -200 0 0" Source="Resources\ammar.jpg"
+                    Height="200"
+                    Width="200"
+                    
+                    
+                    />
+                        <Label
+                    Name="N_ammar_lb"
+                    Content="Ammar Mohamed"
+                    Width="180"
+                    Margin="400 -365 0 0" Height="35"
+                    FontSize="20"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    >
+                            <Label.Effect>
+                                <DropShadowEffect Opacity="0.4"/>
+                            </Label.Effect>
+                        </Label>
+                        <TextBlock
+                      Width="93"
+                    Margin="330 -300 0 0"
+                    Height="25"
+                    Name="ammar_linkedin_tb"
+                    >
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="False">
+                                            <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        </Trigger>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                    
+                 <Hyperlink Foreground="#FF000200"   NavigateUri="https://www.linkedin.com/in/ammar-hassan-5a16551a1/" RequestNavigate="Hyperlink_RequestNavigate_s">
+                 Linkedin profile
+                     
+                  </Hyperlink>
+
+                        </TextBlock>
+                        <Label
+                     Name="D_amaar_lb"
+                    Content="Artificial Intelligence"
+                    Width="150"
+                    Margin="370 -230 0 0" Height="35"
+                    FontSize="15"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+                    ></Label>
+
+
+                    </StackPanel>
+                </Border>
+                <TextBlock 
+                      Name="home_tb"
+                    MouseLeftButtonDown="home_tb_MouseLeftButtonDown"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Width="100"
+                    Margin="350 0 0 0" Height="35"
+                    FontSize="30"
+                    FontFamily="Garamond"
+                    FontWeight="Bold"
+            Text="HOME"
+             Cursor="Hand"
+                    >
+                    <TextBlock.Effect>
+                        <DropShadowEffect
+      ShadowDepth="4"
+      Direction="330"
+      Color="Black"
+      Opacity="0.4"
+     BlurRadius="4"/>
+                    </TextBlock.Effect>
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                </Trigger>
+
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+
+
+
+            </Grid>
+        </Window>
+
+

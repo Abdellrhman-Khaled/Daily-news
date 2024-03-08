@@ -1,0 +1,315 @@
+﻿<Window x:Class="Newsify.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Newsify"
+        mc:Ignorable="d"
+        Title="Newsify" Height="650" Width="1200" WindowStartupLocation="CenterScreen" Background="#e7d1aa">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Name="newsify_lb" Content="Newsify"
+                   FontFamily="Garamond"
+                   FontSize="35"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                        
+                       Margin="-350,10,0,10" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                   FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect Opacity="0.2"/>
+                </Label.Effect>
+            </Label>
+            <Label Name="stay_informed_lb" Content="Stay Informed, Stay Ahead"
+                   FontFamily="Garamond"
+                   FontSize="12"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                        
+                       Margin="-350,-18,0,0" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                   FontWeight="Bold">
+                <Label.Effect>
+                    <DropShadowEffect Opacity="0.1"/>
+                </Label.Effect>
+            </Label>
+            <Border BorderBrush="Black" BorderThickness="1" Width="150" Height="0.5" Margin="-350,-42,0,0" Opacity="0.8"/>
+
+
+        </StackPanel>
+
+
+        <Button Name="signup_btn"
+                Grid.Column="1"
+                Grid.Row="0"
+                Width="auto"
+                Height="auto"
+                FontFamily="Nirmala UI"
+                Margin="426.2,10,70.6,24"
+                Cursor="Hand"
+                BorderBrush="#FFF0BF64"
+                Content="Sign Up" >
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFE89D12"/>
+                            <Setter Property="Foreground" Value="white"/>
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="FontWeight" Value="Bold"/>
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter Property="Background" Value="#FFEDBA5C"/>
+                            <Setter Property="Foreground" Value="white"/>
+                            <Setter Property="FontSize" Value="12"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Border Name="login_border" 
+                BorderThickness="0"
+                CornerRadius="20" 
+                BorderBrush="white" 
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Background="#fff6ecde"
+              Width="430" Height="520">
+
+            <StackPanel x:Name="login_pl">
+
+                <Label Name="login_lb"
+                   Content="Login" 
+                   FontFamily="Nirmala UI"
+                   FontSize="30" 
+                   FontWeight="Bold"
+                     Margin="0,50,0,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+                <Label Name="welcome_lb"
+                    Content="Get the latest breaking news !!!"
+                    FontFamily="Nirmala UI"
+                   FontSize="20"
+                     Margin="0,5,0,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+                <TextBlock Name="user_email_lb" Text="Email/Username :"
+                    FontFamily="Nirmala UI"
+                   FontSize="12"
+                     Margin="0,16,145,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontWeight="Bold"/>
+
+
+
+
+                <TextBox Name="user_email_txt"
+                         FontSize="18"
+                         Width="250"
+                         Height="30"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"
+                         Margin="0,3,0,0"
+                         FontFamily="Nirmala UI"
+                         BorderThickness="2" 
+                         Foreground="Gray"
+                         >
+
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="6"/>
+                        </Style>
+
+                    </TextBox.Resources>
+                    <TextBox.Effect>
+                        <DropShadowEffect Color="#FFF3E1C1" ShadowDepth="3"/>
+                    </TextBox.Effect>
+                </TextBox>
+
+                <TextBlock Name="password_lb" Text="Password :"
+                    FontFamily="Nirmala UI"
+                   FontSize="12"
+                     Margin="0,16,185,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontWeight="Bold"/>
+
+                <TextBox Name="password_txt"
+                         FontSize="18"
+                         Width="250"
+                         Height="30"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"
+                         FontFamily="Nirmala UI"
+                         Margin="0,3,0,0"
+                         BorderThickness="2" 
+                         Foreground="Gray"
+                         >
+
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="6"/>
+                        </Style>
+
+                    </TextBox.Resources>
+                    <TextBox.Effect>
+                        <DropShadowEffect Color="#FFF3E1C1" ShadowDepth="3"/>
+                    </TextBox.Effect>
+                </TextBox>
+
+                <TextBlock Name="forget_lb" Text="Forget Password ?"
+                    FontFamily="Nirmala UI"
+                   FontSize="12"
+                     Margin="89,7,240.4,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                           MouseLeftButtonDown="forget_lb_MouseLeftButtonDown">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="Underline" />
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <Button Name="login_btn"
+                
+                Width="250"
+                Height="40"
+                FontFamily="Nirmala UI"
+                Margin="0,30,0,0"
+                Cursor="Hand"
+                BorderBrush="#FFF0BF64"
+                Content="Login" 
+                >
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FFE89D12"/>
+                                    <Setter Property="Foreground" Value="white"/>
+                                    <Setter Property="FontSize" Value="16" />
+                                    <Setter Property="FontWeight" Value="Bold"/>
+
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Background" Value="#FFEDBA5C"/>
+                                    <Setter Property="Foreground" Value="white"/>
+                                    <Setter Property="FontSize" Value="16"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Label Name="dont_lb" Content="Don't Have an Account ?" 
+                     FontFamily="Nirmala UI"
+                   FontSize="12"
+                     Margin="89,20,189.4,0" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" Width="152"/>
+
+                <TextBlock x:Name="signup_lb"
+                           Text="Sign Up"
+                    FontFamily="Nirmala UI"
+                   FontSize="12"
+                     Margin="228,-25,128.4,0" 
+                    Height="17"
+                       Width="74"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           TextDecorations="Underline"
+                           Foreground="Black"
+                       Cursor="Hand">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="TextDecorations"
+                                            Value="Underline" />
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+                <Label Name="copyright_lb" 
+                       Content="  Copyright @ Newsfiy" 
+                     FontFamily="Nirmala UI"
+                   FontSize="12"
+                     Margin="134,40,144.4,0" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" 
+                       FontWeight="SemiBold" Width="152"/>
+
+            </StackPanel>
+
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,1020 @@
+﻿<Window x:Class="Newsify.Daily_News"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Newsify"
+        mc:Ignorable="d"
+        Title="Daily_News" Height="650" Width="1200" WindowStartupLocation="CenterScreen" >
+    <Window.Background>
+        <ImageBrush ImageSource="Resources\background3.jpg"/>
+    </Window.Background>
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Name="logo_nav_pl" Grid.Row="0" Grid.Column="0"  >
+
+                <Label Name="newsify_lb" Content="Newsify"
+                   FontFamily="Garamond"
+                   FontSize="35"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                        
+                       Margin="-350,10,0,10" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                   FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.2"/>
+                    </Label.Effect>
+                </Label>
+
+                <TextBlock x:Name="Profile_lb" Text="PROFILE"
+                    FontFamily="Garamond"
+                   FontSize="22"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           MouseLeftButtonDown="Profile_lb_MouseLeftButtonDown"
+                       Cursor="Hand" 
+                       Margin="200,-43,0,0" 
+                       >
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock x:Name="about_us_lb" Text="ABOUT US"
+                    FontFamily="Garamond"
+                   FontSize="22"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand" 
+                       Margin="450,-43,0,0" 
+                           MouseLeftButtonDown="about_us_lb_MouseLeftButtonDown"
+                       >
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+
+
+                <Label Name="stay_informed_lb" Content="Stay Informed, Stay Ahead"
+                   FontFamily="Garamond"
+                   FontSize="12"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                        
+                       Margin="-350,-15,0,0" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                   FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.1"/>
+                    </Label.Effect>
+                </Label>
+
+
+                <TextBlock Name="home_lb" Text="HOME"
+                    FontFamily="Garamond"
+                   FontSize="22"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand" 
+                       Margin="-6,-60,0,0" 
+                       Grid.Row="0"
+                       Grid.Column="0">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+
+
+                <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="50" Margin="-180,-60,0,0" Opacity="0.5"/>
+                <Border BorderBrush="Black" BorderThickness="1" Width="150" Height="0.5" Margin="-350,-42,0,0" Opacity="0.8"/>
+
+            </StackPanel>
+
+            <StackPanel Name="User_nav_pl" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                <Ellipse Width="120" Height="100" Margin="450,10,0,0">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="Home_profile_photo" ImageSource="Resources\user.png"  >
+                        </ImageBrush>
+                    </Ellipse.Fill>
+
+                </Ellipse>
+
+                <TextBlock Name="user_lb" Text="USER NAME"
+                    FontFamily="Garamond"
+                   FontSize="24"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                           MouseLeftButtonDown="Profile_lb_MouseLeftButtonDown"
+                       Cursor="Hand" 
+                       Margin="190,-100,0,0" 
+                       Grid.Row="0"
+                       Grid.Column="1">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+            <TextBlock x:Name="Logout_lb" Text="LOGOUT"
+                    FontFamily="Garamond"
+                   FontSize="22"
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand" 
+                       Margin="0,-125,490,0" 
+                           MouseLeftButtonDown="Logout_lb_MouseLeftButtonDown"
+                       >
+
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="TextDecorations"
+                                            Value="None" />
+                                <Setter Property="FontWeight" Value="Medium"/>
+
+                                <Setter Property="Opacity" Value="0.7"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1"/>
+
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </TextBlock.Style>
+            </TextBlock>
+
+
+        </StackPanel>
+
+            <StackPanel   Grid.Row="1"  Grid.ColumnSpan="2" Name="today_news_pl">
+                <Border BorderBrush="Black" BorderThickness="20" Width="400" Height="0.5" Margin="-750,50,0,0" Opacity="1"/>
+                <Label Name="Today_news_lb" Content="TODAY NEWS"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="50"
+                    Height="auto"
+                       Width="435"
+                   HorizontalContentAlignment="Center"
+                       Margin="0,-40,0,0" 
+                   FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.4"/>
+                    </Label.Effect>
+                </Label>
+                <Border BorderBrush="Black" BorderThickness="20" Width="400" Height="0.5" Margin="780,-55,20,0" Opacity="1"/>
+
+            </StackPanel>
+            <StackPanel   Grid.Row="2"  Grid.ColumnSpan="2" Name="search_cat_pl">
+                <Image Source="Resources/magnifierpng.png" Height="30" Margin="-1100,20,0,0" Width="45" Opacity="0.6" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+
+                <TextBox Name="search_txt"
+                         FontSize="20"
+                         Width="200"
+                         Height="30"
+                         KeyDown="search_txt_KeyDown"
+                         
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"
+                         FontFamily="Garamond"
+                         Margin="-850,-30,0,0"
+                         BorderThickness="0"
+                        GotFocus="search_txt_GotFocus"
+                         LostFocus="search_txt_LostFocus"
+                         Text="SEARCH..."
+                         Opacity="0.7" Background="{x:Null}" 
+                     BorderBrush="{x:Null}" MaxLength="500" />
+
+
+                <!--<TextBlock Name="cat1" Text="HEALTHY"
+                    MouseLeftButtonDown="cat1_MouseLeftButtonDown"
+                    FontFamily="Baskerville Old Face"
+                   FontSize="18"
+                     Margin="-620,-27,0,0" 
+                    Height="auto"
+                       Width="130"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Foreground="Black">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>-->
+
+                <TextBlock Name="cat2" Text="SPORTS"
+                    FontFamily="Baskerville Old Face"
+                           MouseLeftButtonDown="cat1_MouseLeftButtonDown"
+                          
+                   FontSize="21"
+                     Margin="-530,-27,0,0" 
+                    Height="auto"
+                           TextAlignment="Center"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Foreground="Black">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                      
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock Name="cat3" Text="POLITICAL"
+                    FontFamily="Baskerville Old Face"
+                           TextAlignment="Center"
+                           MouseLeftButtonDown="cat1_MouseLeftButtonDown"
+                   FontSize="18"
+                     Margin="-200,-27,0,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Foreground="Black">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Name="cat4" Text="WEATHER"
+                    FontFamily="Baskerville Old Face"
+                           TextAlignment="Center"
+                   FontSize="18"
+                           MouseLeftButtonDown="cat1_MouseLeftButtonDown"
+                     Margin="135,-27,0,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Foreground="Black">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Name="cat5" Text="ECONOMY"
+                    FontFamily="Baskerville Old Face"
+                           TextAlignment="Center"
+                   FontSize="18"
+                           MouseLeftButtonDown="cat1_MouseLeftButtonDown"
+                     Margin="462,-27,0,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Foreground="Black">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+                <TextBlock Name="cat6" Text="TECHNOLOGY"
+                    FontFamily="Baskerville Old Face"
+                           TextAlignment="Center"
+                           MouseLeftButtonDown="cat1_MouseLeftButtonDown"
+                   FontSize="18"
+                     Margin="780,-27,0,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Foreground="Black">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+
+                <TextBlock Name="next_lb" Text="NEXT"
+                    FontFamily="Baskerville Old Face"
+                           TextAlignment="Center"
+                   FontSize="18"
+                           MouseLeftButtonDown="next_lb_MouseLeftButtonDown"
+                     Margin="1020,-27,0,0" 
+                    Height="auto"
+                       Width="auto"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Cursor="Hand"
+                       Foreground="Black">
+
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="TextBlock.TextDecorations"
+                                            Value="None" />
+                                    <Setter Property="FontWeight" Value="Medium"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+
+                    </TextBlock.Style>
+                </TextBlock>
+
+
+            </StackPanel>
+
+            <StackPanel x:Name="top_rated_news_pl" Grid.Row="3" Grid.Column="0">
+                <Label Name="top_rate_lb" Content="TOP RATED NEWS"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="35"
+                    Height="auto"
+                       Width="auto"
+                   HorizontalContentAlignment="Center"
+                       Margin="0,0,240,0" 
+                   FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.2"/>
+                    </Label.Effect>
+                </Label>
+
+                <Label Name="author" Content="NEWS AUTHOR"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="10"
+                    Width="150"
+                   Height="25"
+                   Opacity="0.7"
+                   HorizontalContentAlignment="Center"
+                       Margin="150,-320,-0.2,-500"
+                   FontWeight="Medium">
+
+
+                </Label>
+
+                <Label Name="left_author_top" Content="MOHAMED SAMY"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="18"
+                    Width="260"
+                   Height="55"
+                   Opacity="1"
+                   HorizontalContentAlignment="Center"
+                       Margin="300,-250,-0.2,-500" 
+                   FontWeight="Medium">
+
+                </Label>
+
+                <Border BorderBrush="Black" BorderThickness="1" Width="220" Height="0.5" Margin="330,-45,0,0" Opacity="0.8"/>
+            <TextBlock Name="left_title_top" Text="Yung Gravy Brings Addison Raeâ€™s Mom As His VMAs Date, Calls Her A Certain 4-Letter Word"
+                   
+                   FontFamily="Baskerville Old Face"
+                   FontSize="13"
+                    Width="280"
+                   Height="70"
+                   Opacity="1"
+                   HorizontalAlignment="Center"
+                       Margin="280,-430,-0.2,-500" 
+                   FontWeight="Bold"
+                      TextWrapping="Wrap" >
+                <TextBlock.Effect>
+                    <DropShadowEffect Opacity="0.3"/>
+                </TextBlock.Effect>
+
+
+            </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" Width="260" Height="0.5" Margin="290,75,0,0" Opacity="0.8"/>
+
+                <Button Name="left_new_top" Width="250" Height="140" Margin="-260,-71,0,0" Cursor="Hand" Click="left_new_top_Click">
+
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/logo.jpg"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+
+                </Button>
+
+
+                <Button Name="left_new_down" Width="250" Height="140" Margin="250,15,0,0" 
+                    Cursor="Hand" Click="left_new_top_Click">
+
+                    <Button.Background>
+                    <ImageBrush ImageSource="Resources/logo.jpg"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="360" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+
+                </Button>
+
+
+
+            <TextBlock Name="left_title_down" Text="Australia news LIVE: Russia-Ukraine war spills into seventh straight day of conflict as more explosions reported in Kyiv; NSW, Queensland floods worsen as Sydney braces for torrential rain"
+                   
+                   FontFamily="Baskerville Old Face"
+                   FontSize="13"
+                    Width="270"
+                   Height="70"
+                   Opacity="1"
+                   TextWrapping="Wrap"
+                           HorizontalAlignment="Center"
+                       Margin="-280,-720,0,-500" 
+                   FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect Opacity="0.3"/>
+                </TextBlock.Effect>
+
+
+            </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" Width="260" Height="0.5" Margin="-300,-150,0,0" Opacity="0.8"/>
+                <Label Name="author5" Content="NEWS AUTHOR"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="10"
+                    Width="100"
+                   Height="20"
+                   Opacity="0.7"
+                   HorizontalContentAlignment="Center"
+                       Margin="-450,-620,0,-500"
+                   FontWeight="Medium">
+
+
+                </Label>
+                <Label Name="left_author_down" Content="MOHAMED SAMY"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="18"
+                    Width="230"
+                   Height="40"
+                   Opacity="1"
+                   HorizontalContentAlignment="Center"
+                       Margin="-300,-560,0,-500" 
+                   FontWeight="Medium">
+
+                </Label>
+
+                <Button Name="Right_btn" Width="40" Height="30" Margin="-300,0,0,0" Cursor="Hand" BorderBrush="Black" Click="Right_btn_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/right.png"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+                </Button>
+
+                <Button Name="Left_btn" Width="40" Height="30" Margin="-400,-31,0,0" Cursor="Hand" BorderBrush="Black" Click="Left_btn_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/left.png"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+                </Button>
+                <Border BorderBrush="Black" BorderThickness="1" Width="400" Height="0.5" Margin="170,-28,0,0" Opacity="0.8"/>
+
+
+            </StackPanel>
+
+            <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="350" Margin="0,0,0,0" Opacity="0.5" Grid.Row="3" Grid.ColumnSpan="2"/>
+
+            <StackPanel x:Name="latest_pl" Grid.Row="3" Grid.Column="1">
+                <Label Name="latest_lb" Content="LATEST NEWS"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="35"
+                    Height="auto"
+                       Width="auto"
+                   HorizontalContentAlignment="Center"
+                       Margin="0,0,330,0" 
+                   FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.2"/>
+                    </Label.Effect>
+                </Label>
+                <Border BorderBrush="Black" BorderThickness="1" Width="280" Height="0.5" Margin="250,-45,0,0" Opacity="0.8"/>
+
+                <Label Name="author3" Content="NEWS AUTHOR"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="10"
+                    Width="150"
+                   Height="25"
+                   Opacity="0.7"
+                   HorizontalContentAlignment="Center"
+                       Margin="-480,-320,-0.2,-500"
+                   FontWeight="Medium">
+
+
+                </Label>
+
+                <Label Name="right_author_top" Content="MOHAMED SAMY"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="18"
+                    Width="260"
+                      
+                   Height="55"
+                   Opacity="1"
+                   HorizontalContentAlignment="Center"
+                       Margin="-330,-250,-0.2,-500" 
+                   FontWeight="Medium">
+
+                </Label>
+
+                <Border BorderBrush="Black" BorderThickness="1" Width="220" Height="0.5" Margin="330,-45,0,0" Opacity="0.8"/>
+                <TextBlock Name="right_title_top" Text="THE OZONE LAYER &#x0a;WAS REPAIRED"
+                   
+                   FontFamily="Baskerville Old Face"
+                   FontSize="13"
+                    Width="265"
+                   Height="70"
+                   Opacity="1"
+                    TextWrapping="Wrap"
+                   Margin="-320,-430,-0.2,-500" 
+                           HorizontalAlignment="Center"
+                   FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect Opacity="0.3"/>
+                </TextBlock.Effect>
+
+
+            </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" Width="260" Height="0.5" Margin="-330,75,0,0" Opacity="0.8"/>
+
+                <Button Name="right_new_top" Width="250" Height="140" Margin="200,-71,0,0" Cursor="Hand" Click="left_new_top_Click">
+
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/logo.jpg"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+
+                </Button>
+
+
+                <Button Name="right_new_down" Width="250" Height="140" Margin="-300,15,0,0" 
+                    Cursor="Hand" Click="left_new_top_Click">
+
+                    <Button.Background>
+                    <ImageBrush ImageSource="Resources/logo.jpg"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="360" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+
+                </Button>
+
+
+
+                <TextBlock Name="right_title_down" Text="THE OZONE LAYER &#x0a;WAS REPAIRED"
+                   
+                   FontFamily="Baskerville Old Face"
+                   FontSize="13"
+                    Width="270"
+                   Height="70"
+                   Opacity="1"
+                   TextWrapping="Wrap"
+                       Margin="230,-720,0,-500" 
+                           HorizontalAlignment="Center"
+                   FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect Opacity="0.3"/>
+                </TextBlock.Effect>
+
+
+            </TextBlock>
+                <Border BorderBrush="Black" BorderThickness="1" Width="260" Height="0.5" Margin="250,-150,0,0" Opacity="0.8"/>
+                <Label Name="author2" Content="NEWS AUTHOR"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="10"
+                    Width="100"
+                   Height="20"
+                   Opacity="0.7"
+                   HorizontalContentAlignment="Center"
+                       Margin="50,-620,0,-500"
+                   FontWeight="Medium">
+
+
+                </Label>
+                <Label Name="right_author_down" Content="MOHAMED SAMY"
+                   FontFamily="Baskerville Old Face"
+                   FontSize="18"
+                    Width="230"
+                   Height="40"
+                   Opacity="1"
+                   HorizontalContentAlignment="Center"
+                       Margin="200,-560,0,-500" 
+                   FontWeight="Medium">
+
+                </Label>
+
+                <Button Name="Up_btn" Width="40" Height="30" Margin="550,-300,0,0" Cursor="Hand" BorderBrush="Black" Click="Up_btn_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/up.png"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+                </Button>
+
+                <Button Name="Down_btn" Width="40" Height="30" Margin="550,-220,0,0" Cursor="Hand" BorderBrush="Black" Click="Down_btn_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Resources/down.png"/>
+                    </Button.Background>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="1"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+</Window>

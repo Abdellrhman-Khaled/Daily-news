@@ -1,0 +1,496 @@
+﻿    <Window x:Class="Newsify.News_page"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:Newsify"
+            mc:Ignorable="d"
+            Title="Newsify" Height="600" Width="1200" WindowStartupLocation="CenterScreen">
+
+        <Window.Background>
+            <ImageBrush ImageSource="Resources/background3.jpg" />
+        </Window.Background>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Name="logo_nav_pl" Grid.Row="0" Grid.Column="0"  >
+
+                <Label Name="newsify_about_lb" Content="Newsify"
+                       FontFamily="Garamond"
+                       FontSize="35"
+                        Height="auto"
+                           Width="auto"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                        
+                           Margin="-350,10,0,10" 
+                           Grid.Row="0"
+                           Grid.Column="0"
+                       FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.2"/>
+                    </Label.Effect>
+                </Label>
+                <Label Name="stay_informed_about_lb" Content="Stay Informed, Stay Ahead"
+                       FontFamily="Garamond"
+                       FontSize="12"
+                        Height="auto"
+                           Width="auto"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                        
+                           Margin="-350,-15,0,0" 
+                           Grid.Row="0"
+                           Grid.Column="0"
+                       FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.1"/>
+                    </Label.Effect>
+                </Label>
+                <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="50" Margin="-180,-60,0,0" Opacity="0.5"/>
+                <Border BorderBrush="Black" BorderThickness="1" Width="150" Height="0.5" Margin="-350,-42,0,0" Opacity="0.8"/>
+
+            </StackPanel>
+            <StackPanel   Grid.Row="1"  Grid.ColumnSpan="2" Name="about_us_pl" Margin="10,-1,-10,0">
+
+                <Label Name="news_title_lp" Content="Australia news LIVE: Russia-Ukraine war spills into seventh straight day of conflict as more explosions reported in Kyiv; NSW, Queensland floods worsen as Sydney braces for torrential rain"
+                       FontFamily="Baskerville Old Face"
+                       FontSize="15"
+                           
+                        Height="auto"
+                           Width="auto"
+                       HorizontalContentAlignment="Center"
+                           Margin="0,8,0,0" 
+                       FontWeight="Bold">
+                    <Label.Effect>
+                        <DropShadowEffect Opacity="0.2"/>
+                    </Label.Effect>
+                </Label>
+
+            </StackPanel>
+            <Border
+                Grid.Column="0"
+                Grid.Row="2"
+                >
+
+                <StackPanel Grid.Row="2" Grid.Column="0">
+                    <Image x:Name="news_img" Source="Resources/news2.jpg" Height="300" Width="550" Margin="-30 10 0 0" Stretch="Fill" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label
+                        Name="news_author"
+                        Content="NEWS AUTHOR"
+                        Width="160"
+                        FontFamily="Baskerville Old Face"
+                        FontWeight="Bold"
+                        HorizontalContentAlignment="Left"
+                        Margin="-400 0 0 0 "
+                        VerticalContentAlignment="Center"
+                        FontSize="15"
+                        >
+
+                    </Label>
+                    <Label
+                          
+                        Width="380"
+                        FontWeight="Bold"
+                        FontFamily="Baskerville Old Face"
+                        Name="author_name"
+                        HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        Content="zeiad mahomud"
+                        FontSize="25"
+                        ></Label>
+                    <Border BorderBrush="Black" BorderThickness="1" Width="1" Height="400" Margin="570,-375,0,0" Opacity="0.8"/>
+                </StackPanel>
+            </Border>
+            <Border
+                Grid.Column="1"
+                Grid.Row="2"
+                >
+                <StackPanel>
+                    <Label
+                        Name="average_reat_lb"
+                        Width="70"
+                        Height="35"
+                        HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        Margin="-460 10 0 0"
+                        Content="2/5"
+                        FontFamily="Baskerville Old Face"
+                        FontSize="25"
+                        FontWeight="Bold"
+                    
+                        ></Label>
+                    <Image
+                        x:Name="avr_s"
+                        Height="20"
+                        Width="20"
+                        Margin="-565 -35 0 0" Source="Resources/star.png"
+                    
+                        />
+                    <Image
+                        Width="20"
+                        Height="20"
+                        Margin="-300 -35 0 0"
+                        x:Name="first_s" Source="Resources/white0.png"
+                        Cursor="Hand"
+                                MouseLeftButtonDown="First_s_MouseLeftButtonDown"
+                        />
+                    <Image
+                        Width="20"
+                                MouseLeftButtonDown="Sec_s_MouseLeftButtonDown"
+                        Height="20"
+                        Margin="-250 -35 0 0"
+                        x:Name="sec_s" Source="Resources/white0.png"
+                        Cursor="Hand"
+                        />
+                    <Image
+                        Width="20"
+                        Height="20"
+                        Margin="-200 -35 0 0"
+                                MouseLeftButtonDown="Third_s_MouseLeftButtonDown"
+                        x:Name="third_s" Source="Resources/white0.png"
+                        Cursor="Hand"
+                        />
+                    <Image
+                        Width="20"
+                        Height="20"
+                                MouseLeftButtonDown="Fourth_s_MouseLeftButtonDown"
+                        Margin="-150 -35 0 0"
+                        x:Name="fourth_s" Source="Resources/white0.png"
+                        Cursor="Hand"
+                        />
+
+                    <Image
+                        Width="20"
+                                MouseLeftButtonDown="Fifth_s_MouseLeftButtonDown"
+                        Height="20"
+                        Margin="-100 -35 0 0"
+                        x:Name="fifth_s" Source="Resources/white0.png"
+                        Cursor="Hand"
+                        />
+                <ScrollViewer
+                    VerticalScrollBarVisibility="Hidden"
+                    CanContentScroll="True"  >
+
+
+                    <TextBox
+                    Width="580"
+                    Height="100"
+                    TextWrapping="Wrap"
+                    FontSize="18"
+                    FontWeight="Medium"
+                    FontFamily="Garamond"
+                    Name="new_description_lb"
+                    ScrollViewer.CanContentScroll="True"
+                   IsReadOnly="True"
+                    BorderBrush="{x:Null}" 
+                      BorderThickness="0"
+                        VerticalScrollBarVisibility="Auto"
+                         >
+                        <TextBox.Background>
+                            <ImageBrush/>
+                        </TextBox.Background>
+                        Russiaâ€™s invasion of Ukraine is likely to mean that central banks will take longer to tighten the ultra-loose monetary policy they deployed during the coronavirus pandemic, according to the chief executive of Man Group, one of the worldâ€™s biggest hedge fund managers. Luke Ellis, whose firm has $148.6bn in assets and reported record client inflows and a 230 per cent rise in profits for last year, said on Tuesday he was â€œscepticalâ€ of whether markets had really seen the end of â€œeasy moneyâ€, despite strong central bank rhetoric in recent months that interest rates would have to rise to combat inflation. â€œThe Ukraine situation pushes that out,â€ Ellis told the Financial Times. â€œItâ€™s likely that central banks will be less aggressive than they would have been, even though their problem is worse. â€œThis [war in Ukraine] is clearly inflationary,â€ he added. Majority His comments come after central banks have targeted tighter monetary policy to try and control a surge in inflation, which hit a higher than forecast rate of 7.5 per cent in the US in January - a 40-year high. A recent poll of 45 economists by the FT and the Initiative on Global Markets at the University of Chicago Booth School of Business found that a majority expected the federal funds rate to increase from its current near-zero level to a minimum of 1.5 per cent by the end of this year. Ellis also said that Man Groupâ€™s funds had sold out of virtually all of their positions in Russia and Ukraine before Christmas, on fears that rising tensions would lead to capital controls. He said the firm still had what he described as a â€œde minimisâ€ position in Russian equities, which it had not managed to sell but which â€œmakes no differenceâ€. Man on Tuesday reported record net inflows during the year of $13.7 billion (â‚¬12.2 billion), with $7.2 billion of these coming in the fourth quarter alone. Last yearâ€™s flows equal almost the entirety of the $13.9 billion net inflows recorded by the whole of the $3.6tn hedge fund industry for 2021, as measured by data group eVestment. Statutory pre-tax profit jumped from $179mn in 2020 to $590mn last year, helped by a near-quadrupling of performance fee earnings and a rise in management fees. Gains While hedge funds made gains during the pandemic on average, helped by rising markets, it has often been the biggest firms who have prospered most. Manâ€™s rivals Citadel and Millennium, for instance, have posted large gains, helped by their diversification across assets, an ability to raise or cut risk quickly and their ability to hire traders. Man posted strong gains in a number of its funds last year, aided by rising markets and a move by investors into cheaper, so-called value stocks. Its $4.7 billion AHL Evolution fund, which bets on trends in almost 800 niche markets, rose 17 per cent, while its GLG Japan CoreAlpha fund gained 28.2 per cent. Its AHL TargetRisk strategy, which aims to balance risk across equities, government bonds, credit and inflation-linked bonds, gained 14.4 per cent and grew from $11.2 billion to $18.7 billion in assets during the year. Ellis said that after two consecutive quarters of record net inflows at the end of last year, the firm was â€œback to normal nowâ€ but added that clients had not â€œhit the panic buttonâ€ in response to a choppy start to 2022 in markets. Man Groupâ€™s share price was up 1 per cent to 195.05p at around midday on Tuesday. â€“ Copyright The Financial Times Limited 2022
+
+                    </TextBox>
+                    
+                </ScrollViewer>
+
+                <Border BorderBrush="Black" BorderThickness="1" Width="575" Height="1" Margin="0,10,0,0" Opacity="0.8"/>
+                    <Label
+                        Name="comment_lp"
+                        Content="Comments :"
+                         FontWeight="Bold"
+                        FontFamily="Garamond"
+                        FontSize="20"
+                        Height="auto"
+                        Width="120"
+                        Margin="-450 0 0 0"
+                         HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        ></Label>
+
+
+                    <Label
+                        Name="username1_lp"
+                        Content="zeiad1706"
+                         FontFamily="Garamond"
+                        FontSize="15"
+                        Height="30"
+                        Width="100"
+                        Margin="-440 0 0 0"
+                         HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        ></Label>
+                    <Border BorderBrush="Black" BorderThickness="1" Width="200" Height="1" Margin="-320,0,0,0" Opacity="0.8"/>
+                    <TextBlock 
+                        TextWrapping="Wrap"
+                        Name="user1_cooment_txtb"
+                        Height="50"
+                        Width="500"
+                        Margin="-20 0 0 0"
+                        Text="hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+                        ></TextBlock>
+                    <Label
+                        Name="username2_lp"
+                        Content="zeiad1706"
+                         FontFamily="Garamond"
+                        FontSize="15"
+                        Height="30"
+                        Width="100"
+                        Margin="-440 0 0 0"
+                         HorizontalContentAlignment="Left"
+                        VerticalContentAlignment="Center"
+                        ></Label>
+                    <Border BorderBrush="Black" BorderThickness="1" Width="200" Height="1" Margin="-320,0,0,0" Opacity="0.8"/>
+
+                    <TextBlock 
+                        TextWrapping="Wrap"
+                        Name="user2_cooment_txtb"
+                        Height="50"
+                        Width="500"
+                        Margin="-20 0 0 0"
+                        Text="hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+                        ></TextBlock>
+
+
+                    <TextBox Name="comment_txt"
+                             FontSize="20"
+                             Width="500"
+                             Height="30"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Left"
+                             FontFamily="Garamond"
+                             Margin="-90,17,0,0"
+                             BorderThickness="0"
+                             Text="ADD COMMENT..."
+                                     GotFocus="comment_txt_GotFocus"
+                                     LostFocus="comment_txt_LostFocus"
+                             Opacity="0.7" Background="{x:Null}" 
+                         BorderBrush="{x:Null}"
+                        
+                             />
+                    <Button Name="add_btn" Width="80" Click="add_btn_Click" Height="30" Margin="500,-30,0,0" Cursor="Hand" BorderBrush="Black" >
+                        <Button.Background>
+                            <ImageBrush />
+                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="1"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                        ADD
+                    </Button>
+                    <Button Name="up_btn" Width="40" Height="30" Margin="550,-300,0,0" Cursor="Hand" BorderBrush="Black" Click="up_btn_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="Resources/up.png"/>
+                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="1"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                           
+                    </Button>
+                    <Button Name="down_btn" Width="40" Height="30" Margin="550,-230,0,0" Cursor="Hand" BorderBrush="Black" Click="down_btn_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="Resources/down.png"/>
+                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="1"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                           
+                    </Button>
+
+                    <Button Grid.Column="1" Grid.Row="2" Click="spam_btn_Click" Name="spam_btn" Width="50" Height="20" Content="Spam"   Margin="475,-780,0,0" Cursor="Hand" BorderBrush="Black" HorizontalContentAlignment="Center" >
+                        <Button.Background>
+                            <ImageBrush />
+                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.7"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+
+                    </Button>
+
+                </StackPanel>
+
+            </Border>
+            <TextBlock 
+                          Name="home_tb"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Width="100"
+                        Margin="350 0 0 0" Height="35"
+                        FontSize="30"
+                        FontFamily="Garamond"
+                        FontWeight="Bold"
+                Text="HOME"
+                 Cursor="Hand"
+                MouseLeftButtonDown="home_tb_MouseLeftButtonDown"
+                        >
+                <TextBlock.Effect>
+                    <DropShadowEffect
+          ShadowDepth="4"
+          Direction="330"
+          Color="Black"
+          Opacity="0.4"
+         BlurRadius="4"/>
+                </TextBlock.Effect>
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                            </Trigger>
+
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button Grid.Column="1" Grid.Row="2" Click="rate_btn_Click" Name="rate_btn" Width="50" Height="20" Content="Submit"  Margin="0,-365,0,0" Cursor="Hand" BorderBrush="Black" HorizontalContentAlignment="Center" >
+                <Button.Background>
+                    <ImageBrush />
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.7"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Button.Template>
+
+            </Button>
+
+
+        </Grid>
+    </Window>
+
+  

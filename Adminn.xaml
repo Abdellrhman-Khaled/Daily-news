@@ -1,0 +1,2273 @@
+﻿<Window x:Class="Newsify.Adminn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Newsify"
+        mc:Ignorable="d"
+        Title="Adminn" Height="600" Width="1200" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources\background3.jpg" ></ImageBrush>
+    </Window.Background>
+    
+        
+
+
+            <Grid>
+
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+
+
+                <StackPanel Name="leftsidebar" Grid.Column="0" Background="#E7D1AA" Grid.RowSpan="2" SnapsToDevicePixels="True" >
+                    <StackPanel Name="insideleftsidebar_panel" Height="172" Width="182" Margin="0 20 0 0" Background="#E7D1AA" SnapsToDevicePixels="True" >
+
+
+
+                        <Ellipse Width="110" Height="88" Margin="0,10,0,0">
+                            <Ellipse.Fill>
+                                <ImageBrush x:Name="Home_profile_photSo" ImageSource="Resources\samy.jpg"   >
+                                </ImageBrush>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+
+                        <TextBlock Name="AdminProfileName" Margin="16" FontWeight="Bold"> youssef eldeeb</TextBlock>
+                        <Border BorderBrush="Black" BorderThickness="1" Width="160" Height="1" Opacity="0.8" Margin="0 -12 0 0"/>
+                        <TextBlock Name="AdminProfileEmail" Margin="15 0 0 0 " IsEnabled="False" Opacity="0.9">youssefeldeeb@gmail.com</TextBlock>
+                    </StackPanel>
+
+                    <TextBlock
+                    Name="ShowAllNews_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 40 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                        MouseLeftButtonDown="ShowAllNews_Tb_MouseLeftButtonDown_1"
+                   
+                    Width="83"
+                    >
+                    Show All News
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Width="200" Height="1" Opacity="0.5" Margin="0 10 0 0" />
+
+                    <TextBlock
+                    Name="AddNews_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 10 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                   
+                    Width="62"
+                    >
+                    Add News
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+
+                    <TextBlock
+                    Name="updateNews_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 10 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                   
+                    Width="77"
+                    >
+                    Update News
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+
+                    <TextBlock
+                    Name="Addcatagory_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 10 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                   
+                    Width="77"
+                    >
+                    Add Catagory
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+
+
+                    <Border BorderBrush="Black" BorderThickness="1" Width="200" Height="1" Opacity="0.5" Margin="0 10 0 0" />
+
+                    <TextBlock
+                    Name="AddUser_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 10 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                   
+                    Width="56"
+                    >
+                    Add User
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <TextBlock
+                    Name="removeUser_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 10 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                   
+                    Width="76"
+                    >
+                    Remove User
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <Border BorderBrush="Black" BorderThickness="1" Width="200" Height="1" Opacity="0.5" Margin="0 10 0 0" />
+
+
+                    <TextBlock
+                    Name="AddAdmin_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 10 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                   
+                    Width="65"
+                    >
+                    Add Admin
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <Button 
+            Name="LogOut_btn"
+            Grid.Column="1" 
+            Width="200"
+            Height="30"
+            Margin="0,30,0,0"
+            Cursor="Hand"
+            BorderBrush="#fff0bf64"
+            Content="Logout" Click="LogOut_btn_Click"
+            
+            
+            >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="Background" Value="#ffe89d12"/>
+                                        <Setter Property="Foreground" Value="white"/>
+                                        <Setter Property="FontSize" Value="12"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#ffedba5c"/>
+                                        <Setter Property="Foreground" Value="white"/>
+                                        <Setter Property="FontSize" Value="12"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+
+                    </Button>
+                    <TextBlock
+                    Name="backHome_Tb"
+                    Padding="0 0 0 0"
+                    Margin="30 10 0 0 "
+                    HorizontalAlignment="Left"
+                    Height="20"
+                    FontSize="12" 
+                    Cursor="Hand"
+                   
+                    Width="81"
+                    >
+                    Back to home
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="False">
+                                        <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                        <Setter Property="FontWeight" Value="Medium"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                </StackPanel>
+
+                <Border Grid.Column="1" HorizontalAlignment="Center">
+
+
+                    <StackPanel Name="showAllNews_panel" Grid.Column="1" Visibility="Collapsed"  >
+                        <Grid Height="600" Width="945">
+                            <Label Name="showallnews_lb" Content="ALL NEWS" Margin="328,10,328,518" FontSize="50" FontFamily="Baskerville Old Face" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="0,48,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="303">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="-1"/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="28,47,627,552" HorizontalAlignment="Stretch"/>
+
+                    <Image Source="/Resources/magnifierpng.png" 
+                        Height="30" Width="45" Opacity="0.6" Margin="18,119,883,451" />
+
+                            <Label Name="titlelb" FontWeight="Bold" Content="Title" Margin="60,91,813,486"></Label>
+
+                            <TextBox Name="search_txt"
+                         FontSize="20"
+                         Height="30"
+                                     KeyDown="search_txt_KeyDown"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"
+                         FontFamily="Garamond"
+                         Margin="60,119,685,451"
+                         BorderThickness="1"
+                         Text="SEARCH..."
+                         Opacity="0.7" 
+                         BorderBrush="Black"
+                                     GotFocus="search_txt_GotFocus"
+                                     LostFocus="search_txt_LostFocus"
+                             Width="200"
+                             Background="Transparent"
+                             
+                             MaxLength="20" />
+                            <Label Name="catagorylb" FontWeight="Bold" Content="Catagory" Margin="289,91,584,481"></Label>
+                            <ComboBox Name="catagorycombox" 
+                           
+                              SelectionChanged="catagorycombox_SelectionChanged"
+                              Margin="289,119,456,451" Height="30" Cursor="Hand"  />
+                            <Label Name="Ratelb"  FontWeight="Bold" Content="Rate" Margin="514,91,359,486"></Label>
+                            <ComboBox Name="ratecombox" 
+                              Width="200"
+                                      SelectionChanged="ratecombox_SelectionChanged"
+                              Margin="514,119,231,451"
+                              Height="30" Cursor="Hand" Background="Transparent" BorderBrush="Black"/>
+
+
+                            <Button Name="new1" Width="250" Height="140" Margin="68,175,627,285" Cursor="Hand" Click="new1_Click">
+
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\samy.jpg"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+
+                            </Button>
+
+                    <Button Name="new5" Width="250" Height="140" Margin="364,336,331,124" Cursor="Hand" Click="new1_Click">
+
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\abdo.jpg"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+
+                            </Button>
+                    <Button Name="new2" Width="250" Height="140" Margin="364,175,331,285" Cursor="Hand" Click="new1_Click">
+
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\star.png"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+
+                            </Button>
+                    <Button Name="new4" Width="250" Height="140" Margin="68,336,627,124" Cursor="Hand" Click="new1_Click">
+
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\up.png"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+
+                            </Button>
+
+                    <Button Name="new3" Width="250" Height="140" Margin="658,175,37,285" Cursor="Hand" Click="new1_Click">
+
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\down.png"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+
+                            </Button>
+
+                    <Button Name="new6" Width="250" Height="140" Margin="658,336,37,124" Cursor="Hand" Click="new1_Click">
+
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\user.png"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+
+                            </Button>
+
+                            <Button Name="Right_btn" Margin="520,511,365,53" Width="60" Cursor="Hand" BorderBrush="Black" Click="Right_btn_Click">
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\right.png"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="2" Color="Black" Direction="150" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+
+                            <Button Name="Left_btn" Width="60" Margin="412,511,473,53" Cursor="Hand" BorderBrush="Black" Click="Left_btn_Click">
+                                <Button.Background>
+                            <ImageBrush ImageSource="Resources\left.png"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+
+
+                        </Grid>
+                    </StackPanel>
+
+                </Border>
+                <Border Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Name="AddNews_panel" Grid.Column="1"  Visibility="Hidden" >
+                        <Grid Height="600" Width="943">
+                            <Label Name="Addnews_lb" Content="ADD NEWS" Margin="329,12,319,516" FontSize="50" FontFamily="Baskerville Old Face" FontWeight="Bold"></Label>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="653,47,34,552"/>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="34,47,647,552"/>
+
+
+                            <Label Content="Author" Margin="361,104,501,471" FontWeight="Bold"/>
+
+
+                            <TextBox
+                Name="author_txt"
+                Margin="361,135,0,438"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                HorizontalAlignment="Left"
+                        
+                
+                Background="Transparent"
+                        
+                >
+
+
+
+
+                                <TextBox.Resources>
+
+
+                                    <Style  TargetType="TextBox">
+
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="BorderBrush" Value="Black"></Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="BorderBrush" Value="Black"></Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+
+                                    </Style>
+                                    <Style TargetType="Border">
+
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+
+                            </TextBox>
+                            <Label Content="Title" Margin="361,175,501,400" FontWeight="Bold"/>
+
+
+                            <TextBox
+                Name="new_title_txt"
+                Margin="361,205,0,368"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                        
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+
+                            </TextBox>
+
+                            <Label Content="category" Margin="653,104,224,469" FontWeight="Bold"/>
+
+                            <ComboBox
+                Name="catagory_Combobox"
+                Margin="653,136,0,437"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                HorizontalAlignment="Left"
+                        BorderBrush="Black" Cursor="Hand" OpacityMask="Black"
+                >
+                                <ComboBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </ComboBox.Resources>
+                                <ComboBox.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="Black"/>
+                                        <GradientStop Color="Black" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </ComboBox.Background>
+                                
+                                <ComboBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </ComboBox.Effect>
+
+
+
+
+                            </ComboBox>
+
+
+                            <Label Content="Description" Margin="364,269,501,305" FontWeight="Bold"/>
+                            <RichTextBox
+                Name="new_descri_tb"
+                Margin="361,300,0,130"
+                Padding="3"
+                Width="552"
+                HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                >
+                                <RichTextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </RichTextBox.Resources>
+                                <RichTextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </RichTextBox.Effect>
+
+
+
+                            </RichTextBox>
+                            <Label Content="Date" Margin="653,175,211,400" FontWeight="Bold"/>
+
+                            <DatePicker
+                Name="datepicker"
+                Width="260"
+                       Background="Transparent"
+                        BorderBrush="Black"
+                
+                HorizontalAlignment="Left"
+                Margin="653,205,0,367"/>
+                            
+                    <Image Name="newsphoto" HorizontalAlignment="Center" VerticalAlignment="Top" Source="Resources\star.png" Margin="-600,75,0,0" Stretch="Fill" Width="320" Height="226"></Image>
+
+                    <!--<Image Name="newsphoto" Source="Resources\star.png" Margin="34,99,664,305" Stretch="Fill" Width="300" Height="226"  ></Image>-->
+                            <Button
+                    Name="savephoto_bt"
+                    Content="Choose Photo"
+                    Margin="78,326,707,243" 
+                    Height="31"
+                    Cursor="Hand"
+                                Click="savephoto_bt_Click"
+                    >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True" >
+                                                <Setter Property="Background" Value="#ffe89d12"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Background" Value="#ffedba5c"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+
+                            <Button
+                    Name="Addnews_bt"
+                    Content="ADD"
+                    Margin="388,498,349,71" 
+                    Height="31"
+                    Cursor="Hand"
+                                Click="Addnews_bt_Click"
+                    >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True" >
+                                                <Setter Property="Background" Value="#ffe89d12"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Background" Value="#ffedba5c"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+
+
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+
+
+                <Border Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Name="UpdateNews_panel" Grid.Column="1"  Visibility="Collapsed" >
+                        <Grid Height="600">
+                            <Label Name="UpdateNews_lb" Content="UPDATE NEWS" Margin="276,12,276,516" FontSize="50" FontFamily="Baskerville Old Face" FontWeight="Bold"></Label>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="691,47,34,552"/>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="34,47,697,552"/>
+
+                            <StackPanel Name="searchstackpanel" Margin="0,89,0,450" >
+                        <Image Source="/Resources/magnifierpng.png" 
+                            Stretch="Fill" Height="29" Width="30" Margin="0 20 850 0"/>
+                                
+                                <TextBox x:Name="searchUpdatenews_txt" Height="30" Padding="5" Width="488" Background="Transparent" BorderThickness="1" BorderBrush="Black" Margin="0 -30 300 0" MaxLength="100" />
+                                <Button
+                    Name="search_bt"
+                    Content="SEARCH"
+                    Margin="0,-30,50,0" 
+                    Height="31"
+                    Cursor="Hand" 
+                    Width="258"
+                    HorizontalAlignment="Right" Click="search_bt_Click"
+                    >
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True" >
+                                                    <Setter Property="Background" Value="#ffe89d12"/>
+                                                    <Setter Property="Foreground" Value="white"/>
+                                                    <Setter Property="FontSize" Value="12"/>
+                                                    <Setter Property="FontWeight" Value="Bold"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Background" Value="#ffedba5c"/>
+                                                    <Setter Property="Foreground" Value="white"/>
+                                                    <Setter Property="FontSize" Value="12"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+
+                                    </Button.Template>
+                                </Button>
+
+                            </StackPanel>
+                            <StackPanel x:Name="NEWStoUpdatepanel"  Margin="0,155,0,0"  Visibility="Collapsed" >
+                                <Grid Height="446">
+
+
+                                    <Button Name="Updatenew1" Height="140" Margin="31,10,648,296" Cursor="Hand" Click="Updatenew1_Click">
+
+                                        <Button.Background>
+                                    <ImageBrush ImageSource="Resources\star.png"/>
+                                        </Button.Background>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+
+                                        </Button.Template>
+
+                                    </Button>
+
+
+                                    <Button Name="Updatenew2" Height="140" Margin="348,10,333,296" Cursor="Hand" Click="Updatenew1_Click">
+
+                                        <Button.Background>
+                                    <ImageBrush ImageSource="Resources\star.png"/>
+                                        </Button.Background>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+
+                                        </Button.Template>
+
+                                    </Button>
+
+                            <Button Name="Updatenew3" Height="140" Margin="665,10,23,296" Cursor="Hand" Click="Updatenew1_Click" >
+
+                                <Button.Background>
+                                    <ImageBrush ImageSource="Resources\star.png"/>
+                                </Button.Background>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+
+
+
+                            <Button Name="Updatenew4" Height="140" Margin="31,177,648,129" Cursor="Hand" Click="Updatenew1_Click" >
+
+                                        <Button.Background>
+                                    <ImageBrush ImageSource="Resources\star.png"/>
+                                        </Button.Background>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+
+                                        </Button.Template>
+
+                                    </Button>
+
+
+                                <Button Name="Updatenew5" Height="140" Margin="348,177,333,129" Cursor="Hand" Click="Updatenew1_Click">
+
+                                        <Button.Background>
+                                    <ImageBrush ImageSource="Resources\star.png"/>
+                                        </Button.Background>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+
+                                        </Button.Template>
+
+                                    </Button>
+
+
+                                <Button Name="Updatenew6" Height="140" Margin="665,177,23,129" Cursor="Hand" Click="Updatenew1_Click">
+
+                                        <Button.Background>
+                                    <ImageBrush ImageSource="Resources\star.png"/>
+                                        </Button.Background>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border CornerRadius="5"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="1"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="5" Color="Black" Direction="315" Opacity="0.3"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+
+                                        </Button.Template>
+
+                                    </Button>
+
+                                    <Button Name="UpdateLeft_btn" Margin="389,339,487,67" Cursor="Hand" BorderBrush="Black" Click="UpdateLeft_btn_Click">
+                                        <Button.Background>
+                                    <ImageBrush ImageSource="Resources\left.png"/>
+                                        </Button.Background>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="1"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="0.3"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+
+                                        </Button.Template>
+                                    </Button>
+
+                                    <Button Name="UpdateRight_btn" Margin="488,339,390,67" Cursor="Hand" BorderBrush="Black" Click="UpdateRight_btn_Click">
+                                        <Button.Background>
+                                    <ImageBrush ImageSource="Resources\right.png"/>
+                                        </Button.Background>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border CornerRadius="0"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="1"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="False">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect ShadowDepth="2" Color="Black" Direction="50" Opacity="0.3"/>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+
+                                        </Button.Template>
+                                    </Button>
+
+                                </Grid>
+
+                            </StackPanel>
+                            <Border x:Name="UpdateNewsEditeBorder" HorizontalAlignment="Center" Margin="0,89,0,0"  >
+                                <StackPanel Name="updatNewsEditPanel" Grid.Column="1" HorizontalAlignment="Center" Visibility="Collapsed" >
+
+                                    <Grid Height="454" HorizontalAlignment="Center">
+
+
+
+                                        <Label Content="Author" Margin="361,25,501,0" FontWeight="Bold" Height="25" VerticalAlignment="Top"/>
+
+
+                                        <TextBox
+                Name="authorUpdate_txt"
+                Margin="361,55,0,365"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                HorizontalAlignment="Left"
+                        
+                
+                Background="Transparent"
+                        
+                >
+
+
+
+
+                                            <TextBox.Resources>
+
+
+                                                <Style  TargetType="TextBox">
+
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="BorderBrush" Value="Black"></Setter>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="False">
+                                                            <Setter Property="BorderBrush" Value="Black"></Setter>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+
+                                                </Style>
+                                                <Style TargetType="Border">
+
+                                                    <Setter Property="CornerRadius" Value="6">
+
+                                                    </Setter>
+                                                </Style>
+                                            </TextBox.Resources>
+
+                                            <TextBox.Effect>
+                                                <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                            </TextBox.Effect>
+
+
+
+                                        </TextBox>
+                                        <Label Content="Tile" Margin="363,95,499,328" FontWeight="Bold"/>
+
+
+                                        <TextBox
+                Name="new_titleUpdate_txt"
+                Margin="361,124,0,296"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                        
+                >
+                                            <TextBox.Resources>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="CornerRadius" Value="6">
+
+                                                    </Setter>
+                                                </Style>
+                                            </TextBox.Resources>
+                                            <TextBox.Effect>
+                                                <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                            </TextBox.Effect>
+
+
+
+                                        </TextBox>
+
+                                        <Label Content="category" Margin="653,29,211,392" FontWeight="Bold"/>
+
+                                        <ComboBox
+                Name="catagoryUpdate_ComboBox"
+                Margin="653,55,0,365"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                HorizontalAlignment="Left"
+                        BorderBrush="Black"
+                    Background="Transparent" Cursor="Hand"
+                >
+                                            <ComboBox.Resources>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="CornerRadius" Value="6">
+
+                                                    </Setter>
+                                                </Style>
+
+                                            </ComboBox.Resources>
+                                            <ComboBox.Effect>
+                                                <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                            </ComboBox.Effect>
+
+
+
+                                        </ComboBox>
+
+
+                                        <Label Content="Description" Margin="361,183,475,240" FontWeight="Bold"/>
+                                        <RichTextBox
+                Name="new_descri_update_tb"
+                Margin="361,212,0,66"
+                Padding="3"
+                Width="552"
+                HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                >
+                                            <RichTextBox.Resources>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="CornerRadius" Value="6">
+
+                                                    </Setter>
+                                                </Style>
+                                            </RichTextBox.Resources>
+                                            <RichTextBox.Effect>
+                                                <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                            </RichTextBox.Effect>
+
+
+
+                                        </RichTextBox>
+                                        <Label Content="Date" Margin="653,93,211,326" FontWeight="Bold"/>
+
+                                        <DatePicker
+                Name="Updatedatepicker"
+                Width="260"
+                       Background="Transparent"
+                        BorderBrush="Black"
+                
+                HorizontalAlignment="Left"
+                Margin="653,124,0,300"/>
+                                <Image Name="newUpdatesphoto" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/news_paper1.jpg" Margin="25,10,0,0" Stretch="Fill" Width="320" Height="226"></Image>
+                                        <Button
+                    Name="changeUpdatephoto_bt"
+                    Content="CHANGE PHOTO"
+                    Margin="71,249,0,171" 
+                    Height="31"
+                    Cursor="Hand"
+                                            Click="changeUpdatephoto_bt_Click"
+                                HorizontalAlignment="Left"
+                                   VerticalAlignment="Top" Width="184"
+                                
+                    >
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True" >
+                                                            <Setter Property="Background" Value="#ffe89d12"/>
+                                                            <Setter Property="Foreground" Value="white"/>
+                                                            <Setter Property="FontSize" Value="12"/>
+                                                            <Setter Property="FontWeight" Value="Bold"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="False">
+                                                            <Setter Property="Background" Value="#ffedba5c"/>
+                                                            <Setter Property="Foreground" Value="white"/>
+                                                            <Setter Property="FontSize" Value="12"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+
+                                            </Button.Template>
+                                        </Button>
+
+                                        <Button
+                    Name="Updatenews_bt"
+                    Content="UPDATE NEW"
+                    Margin="68,300,669,123" 
+                    Height="31"
+                    Cursor="Hand"
+                                            Click="Updatenews_bt_Click"
+
+                    >
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True" >
+                                                            <Setter Property="Background" Value="#ffe89d12"/>
+                                                            <Setter Property="Foreground" Value="white"/>
+                                                            <Setter Property="FontSize" Value="12"/>
+                                                            <Setter Property="FontWeight" Value="Bold"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="False">
+                                                            <Setter Property="Background" Value="#ffedba5c"/>
+                                                            <Setter Property="Foreground" Value="white"/>
+                                                            <Setter Property="FontSize" Value="12"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+
+                                            </Button.Template>
+                                        </Button>
+
+                                        <Button
+                    Name="Removenews_bt"
+                    Content="Remove NEW"
+                    Margin="68,346,669,77" 
+                    Height="31"
+                    Cursor="Hand"
+                                            Click="Removenews_bt_Click"
+
+                    >
+                                            <Button.Template>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True" >
+                                                            <Setter Property="Background" Value="#ffe89d12"/>
+                                                            <Setter Property="Foreground" Value="white"/>
+                                                            <Setter Property="FontSize" Value="12"/>
+                                                            <Setter Property="FontWeight" Value="Bold"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="False">
+                                                            <Setter Property="Background" Value="#ffedba5c"/>
+                                                            <Setter Property="Foreground" Value="white"/>
+                                                            <Setter Property="FontSize" Value="12"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+
+                                            </Button.Template>
+                                        </Button>
+
+                                        <TextBlock
+                    Name="backtosearchtoUpdate_tb"
+                    Padding="0 0 0 0"
+                    Margin="33,390,0,47"
+                    FontSize="10" 
+                    Cursor="Hand"
+                HorizontalAlignment="Left"
+                   
+                    Width="75"
+                    >
+                    Back to search
+                                            <TextBlock.Style>
+                                                <Style TargetType="{x:Type TextBlock}">
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="TextBlock.TextDecorations" Value="Underline"/>
+                                                            <Setter Property="FontWeight" Value="Bold"/>
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="False">
+                                                            <Setter Property="TextBlock.TextDecorations" Value="None"/>
+                                                            <Setter Property="FontWeight" Value="Medium"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </Grid>
+
+                                </StackPanel>
+                            </Border>
+
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+
+                <Border Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Name="AddCatagory_panel" Grid.Column="1"   Visibility="Collapsed">
+                        <Grid Height="600" Width="937" >
+                            <Label Name="AddCatagory_lb" Content="ADD CATEGORY" Margin="242,10,243,513" FontSize="50" FontFamily="Baskerville Old Face" FontWeight="Bold"></Label>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="699,47,34,552"/>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="34,47,710,552"/>
+                            <TextBox Name="AddCategory_txt" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="30" Width="300" Padding="3"  Background="Transparent" BorderThickness="1" BorderBrush="Black" Margin="318,255,319,315" 
+                            >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6"></Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                            <Button
+                    Name="addcatagory_bt"
+                    Content="Add category"
+                    Margin="0,333,0,0" 
+                    Height="31"
+                    Cursor="Hand"
+                                Click="addcatagory_bt_Click"
+                                HorizontalAlignment="Center"
+                                   VerticalAlignment="Top" Width="184"
+                                
+                    >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True" >
+                                                <Setter Property="Background" Value="#ffe89d12"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Background" Value="#ffedba5c"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+
+
+
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+
+
+
+                <Border Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Name="AddUser_panel" Grid.Column="1" Visibility="Collapsed"  >
+                        <Grid Height="600" >
+                            <Label Name="AddUser_lb" Content="ADD USER" Margin="333,12,333,516" FontSize="50" FontFamily="Baskerville Old Face" FontWeight="Bold"></Label>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="622,47,34,552"/>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="34,47,622,552"/>
+
+
+                            <Label 
+                Name="firstname_lb"
+                
+                    
+                Padding="0 0 0 0"
+                Content="First Name"
+                FontWeight="Bold" Margin="73,97,781,480" 
+                />
+                            <TextBox
+                    
+                Name="firstname_tb"
+                Padding="3"
+                        BorderBrush="Black"
+                        Background="Transparent"
+                        Margin="68,120,606,453" 
+                        Height="27"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="lastname_lb"
+                Margin="460,98,389,480"
+                Padding="0 0 0 0"
+                Content="Last Name"
+                FontWeight="Bold" 
+                />
+
+                            <TextBox
+                Name="lastname_tb"
+                        Height="27"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                Padding="3" Margin="460,125,214,448"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="username_lb"
+                Margin="68,187,769,386"
+                
+                Content="User Name"
+                FontWeight="Bold"
+                />
+
+                            <TextBox
+                Name="username_tb"
+                Margin="68,219,606,354"
+                Padding="3"
+                        BorderBrush="Black"
+                Height="27"
+                        Background="Transparent"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="1"/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBox.RenderTransform>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="emailname_lb"
+                Margin="460,190,410,388"
+                Padding="0 0 0 0"
+                Content="Email"
+                FontWeight="Bold"
+                />
+
+                            <TextBox
+                Name="Email_tb"
+                Margin="460,219,0,0"
+                Padding="3" 
+                Width="260"
+                        BorderBrush="Black"
+                        Background="Transparent"
+                HorizontalAlignment="Left" Height="27" VerticalAlignment="Top"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="phonenumber_lb"
+                Margin="73,290,720,290"
+                Padding="0 0 0 0"
+                Content="Phone Number" 
+                Height="19"
+                FontWeight="Bold"
+                />
+
+                            <TextBox
+                Name="phonenumber_tb"
+                Margin="68,314,0,258"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                HorizontalAlignment="Left"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+                            </TextBox>
+
+                            <Label
+                Content="Birth Date"
+                Margin="460,288,389,284"
+                FontWeight="Bold"/>
+
+                            <DatePicker
+                Name="datepickeradduser"
+                        BorderBrush="Black"
+                Width="260"
+                HorizontalAlignment="Left"
+                Margin="460,316,0,258" RenderTransformOrigin="0.505,0.571">
+
+
+                            </DatePicker>
+
+
+                            <Label 
+                Name="password_lb"
+                Margin="73,391,752,190"
+                Padding="0 0 0 0"
+                Content="Password" 
+                Height="19"
+                FontWeight="Bold" RenderTransformOrigin="-0.211,0.318"
+                />
+
+                            <TextBox 
+                    x:Name="password_tb"
+                HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                    Margin="68,415,0,158" 
+                Height="27"
+                    Width="260" 
+                    Padding="3">
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type TextBox}">
+                                                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                                                        <Grid>
+                                                            <PasswordBox x:Name="PART_PasswordBox"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Margin="{TemplateBinding Padding}"
+                                             FontFamily="{TemplateBinding FontFamily}"
+                                             FontSize="{TemplateBinding FontSize}"
+                                             FontWeight="{TemplateBinding FontWeight}"
+                                             Foreground="{TemplateBinding Foreground}"
+                                             MinHeight="{TemplateBinding MinHeight}"
+                                             MinWidth="{TemplateBinding MinWidth}"
+                                             PasswordChar="•"
+                                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                                                            <TextBox Text="{Binding Path=Password, ElementName=PART_PasswordBox, Mode=OneWay}"
+                                         Visibility="Hidden"/>
+                                                        </Grid>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+
+                            <Button
+                    Name="Addnuser_bt"
+                    Content="ADD USER"
+                    Margin="460,413,214,156" 
+                    Height="31"
+                    Cursor="Hand"
+                                Click="Addnuser_bt_Click"
+                    >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True" >
+                                                <Setter Property="Background" Value="#ffe89d12"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Background" Value="#ffedba5c"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+
+
+
+                        </Grid>
+
+
+
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Name="RemoveUser_panel" Grid.Column="1"  Visibility="Collapsed" >
+                        <Grid Height="600">
+                            <Label Name="Removeuser_lb" Content="REMOVE USER" Margin="285,12,264,516" FontSize="50" FontFamily="Baskerville Old Face" FontWeight="Bold"></Label>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="691,47,34,552"/>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="34,47,670,552"/>
+
+
+
+                            <Label 
+                Name="removeUser_lb"
+                Margin="143,145,689,436"
+                Padding="0 0 0 0"
+                Content="User Name" 
+                Width="90" 
+                Height="19"
+                FontWeight="Bold"
+                ></Label>
+
+                            <TextBox
+                Name="removeUser_tb"
+                Margin="143,169,0,404"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                Background="Transparent"
+                BorderBrush="Black"
+                HorizontalAlignment="Left"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+
+
+                            </TextBox>
+
+
+                            <Label 
+                Name="CommentremoveUser_lb"
+                Margin="143,235,689,346"
+                Padding="0 0 0 0"
+                Content="COMMENT" 
+                Width="90" 
+                Height="19"
+                FontWeight="Bold"
+                ></Label>
+
+                            <RichTextBox
+                Name="CommentremoveUser_tb"
+                Margin="143,259,0,214"
+                Padding="3"
+                Width="260"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+                BorderBrush="Black"
+                >
+                                <RichTextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </RichTextBox.Resources>
+                                <RichTextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </RichTextBox.Effect>
+                            </RichTextBox>
+                            <Button
+                    Name="removeUser_bt"
+                    Content="REMOVE USER"
+                    Margin="517,355,156,214" 
+                    Height="31"
+                    Cursor="Hand"
+                                Click="removeUser_bt_Click"
+                    >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True" >
+                                                <Setter Property="Background" Value="#ffe89d12"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Background" Value="#ffedba5c"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" HorizontalAlignment="Center">
+                    <StackPanel Name="AddAdmin_panel" Grid.Column="1" Visibility="Collapsed"  >
+                        <Grid Height="600">
+                            <Label Name="U_lb" Content="ADD ADMIN" Margin="318,12,284,516" FontSize="50" FontFamily="Baskerville Old Face" FontWeight="Bold"></Label>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="671,48,29,551"/>
+                            <Border BorderBrush="Black" BorderThickness="1" Height="1" Opacity="0.8" Margin="34,47,661,552"/>
+
+
+                            <Label 
+                Name="firstnameADMIN_lb"
+                
+                    
+                Padding="0 0 0 0"
+                Content="First Name"
+                FontWeight="Bold" Margin="73,97,781,480" 
+                />
+                            <TextBox
+                    
+                Name="firstnameADMIN_tb"
+                Padding="3"
+                        BorderBrush="Black"
+                        Background="Transparent"
+                        Margin="68,120,590,453" 
+                        Height="27"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="lastnameADMIN_lb"
+                Margin="460,98,389,480"
+                Padding="0 0 0 0"
+                Content="Last Name"
+                FontWeight="Bold" 
+                />
+
+                            <TextBox
+                Name="lastnameADMIN_tb"
+                        Height="27"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                Padding="3" Margin="460,125,198,448"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="usernameADMIN_lb"
+                Margin="68,187,769,386"
+                
+                Content="User Name"
+                FontWeight="Bold"
+                />
+
+                            <TextBox
+                Name="usernameADMIN_tb"
+                Margin="68,219,590,354"
+                Padding="3"
+                        BorderBrush="Black"
+                Height="27"
+                        Background="Transparent"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="1"/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBox.RenderTransform>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="emailnameADMIN_lb"
+                Margin="460,190,410,388"
+                Padding="0 0 0 0"
+                Content="Email"
+                FontWeight="Bold"
+                />
+
+                            <TextBox
+                Name="EmailADMIN_tb"
+                Margin="460,219,0,0"
+                Padding="3" 
+                Width="260"
+                        BorderBrush="Black"
+                        Background="Transparent"
+                HorizontalAlignment="Left" Height="27" VerticalAlignment="Top"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+
+
+                            </TextBox>
+
+                            <Label 
+                Name="phonenumberADMIN_lb"
+                Margin="73,290,720,290"
+                Padding="0 0 0 0"
+                Content="Phone Number" 
+                Height="19"
+                FontWeight="Bold"
+                />
+
+                            <TextBox
+                Name="phonenumberADMIN_tb"
+                Margin="68,314,0,258"
+                Padding="3" 
+                Height="27"
+                Width="260"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                HorizontalAlignment="Left"
+                >
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="6">
+
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Resources>
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+                            </TextBox>
+
+                            <Label
+                Content="Birth Date"
+                Margin="460,288,389,284"
+                FontWeight="Bold"/>
+
+                            <DatePicker
+                Name="datepickeraddADMIN"
+                        BorderBrush="Black"
+                Width="260"
+                HorizontalAlignment="Left"
+                Margin="460,316,0,258" RenderTransformOrigin="0.505,0.571">
+
+
+                            </DatePicker>
+
+
+                            <Label 
+                Name="passwordADMIN_lb"
+                Margin="73,391,752,190"
+                Padding="0 0 0 0"
+                Content="Password" 
+                Height="19"
+                FontWeight="Bold" RenderTransformOrigin="-0.211,0.318"
+                />
+
+                            <TextBox 
+                    x:Name="passwordADMIN_tb"
+                HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderBrush="Black"
+                    Margin="68,415,0,158" 
+                Height="27"
+                    Width="260" 
+                    Padding="3">
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="5" Opacity="0.7" ShadowDepth="5"/>
+                                </TextBox.Effect>
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type TextBox}">
+                                                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                                                        <Grid>
+                                                            <PasswordBox x:Name="PART_PasswordBox"
+                                             Background="Transparent"
+                                             BorderThickness="0"
+                                             Margin="{TemplateBinding Padding}"
+                                             FontFamily="{TemplateBinding FontFamily}"
+                                             FontSize="{TemplateBinding FontSize}"
+                                             FontWeight="{TemplateBinding FontWeight}"
+                                             Foreground="{TemplateBinding Foreground}"
+                                             MinHeight="{TemplateBinding MinHeight}"
+                                             MinWidth="{TemplateBinding MinWidth}"
+                                             PasswordChar="•"
+                                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                                                            <TextBox Text="{Binding Path=Password, ElementName=PART_PasswordBox, Mode=OneWay}"
+                                         Visibility="Hidden"/>
+                                                        </Grid>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+
+                            <Button
+                    Name="Addadmin_bt"
+                    Content="ADD ADMIN"
+                                Click="Addadmin_bt_Click"
+                    Margin="460,413,198,156" 
+                    Height="31"
+                    Cursor="Hand"
+                    >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border CornerRadius="12"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True" >
+                                                <Setter Property="Background" Value="#ffe89d12"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontWeight" Value="Bold"/>
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="False">
+                                                <Setter Property="Background" Value="#ffedba5c"/>
+                                                <Setter Property="Foreground" Value="white"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+
+
+
+
+
+
+
+            </Grid>
+        </Window>
+
+
